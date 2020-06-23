@@ -1,6 +1,23 @@
 ﻿@page
 @model IndexModel
 
-<div class="text-center">
-    <h1 class="display-4">Auctioncraft</h1>
-</div>
+    <div class="text-center">
+        <h1 class="display-4">Auctioncraft</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount of items sold per day</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.TopAuctions)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.RegionAvgDailySold</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

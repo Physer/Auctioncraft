@@ -1,11 +1,10 @@
 ﻿using Auctioncraft.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 
 namespace Auctioncraft.Pages
@@ -13,6 +12,7 @@ namespace Auctioncraft.Pages
     public class IndexModel : PageModel
     {
         private readonly HttpClient _httpClient;
+        public IEnumerable<Item> TopAuctions { get; set; }
 
         public IndexModel(IHttpClientFactory httpClientFactory)
         {
@@ -23,7 +23,8 @@ namespace Auctioncraft.Pages
         {
             try
             {
-                GetOrCreateDailyDatabase();
+                var auctions = GetOrCreateDailyDatabase();
+                TopAuctions = auctions.OrderByDescending(auction => auction.RegionAvgDailySold).Take(10);
             }
             catch(Exception e)
             {
@@ -31,12 +32,13 @@ namespace Auctioncraft.Pages
             }
         }
 
-        private void GetOrCreateDailyDatabase()
+        private IEnumerable<Item> GetOrCreateDailyDatabase()
         {
             var items = new HashSet<Item>();
             var fileName = $"/app/auctions-{DateTime.UtcNow:yyyyMMdd}.json";
             if (!System.IO.File.Exists(fileName))
-                return;
+                return items;
+
             using (StreamReader file = System.IO.File.OpenText(fileName))
             using (JsonTextReader reader = new JsonTextReader(file))
             {
@@ -51,6 +53,8 @@ namespace Auctioncraft.Pages
                     }
                 }
             }
+
+            return items;
         }
     }
 }
