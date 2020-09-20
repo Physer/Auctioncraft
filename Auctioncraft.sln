@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auctioncraft.Web", "Auctioncraft.Web\Auctioncraft.Web.csproj", "{7974418A-F37F-46E1-9239-57332595A52F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auctioncraft.Blizzard", "Auctioncraft.Blizzard\Auctioncraft.Blizzard.csproj", "{736BE9A1-5F5F-4A3A-A90F-239A4CD208EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7974418A-F37F-46E1-9239-57332595A52F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7974418A-F37F-46E1-9239-57332595A52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7974418A-F37F-46E1-9239-57332595A52F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7974418A-F37F-46E1-9239-57332595A52F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{736BE9A1-5F5F-4A3A-A90F-239A4CD208EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{736BE9A1-5F5F-4A3A-A90F-239A4CD208EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{736BE9A1-5F5F-4A3A-A90F-239A4CD208EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{736BE9A1-5F5F-4A3A-A90F-239A4CD208EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93D11B0F-28F4-4CCA-B042-1F504E8506CE}
+	EndGlobalSection
+EndGlobal
